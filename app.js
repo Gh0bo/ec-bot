@@ -777,7 +777,7 @@ client.on('message', message => {
                     author: {
                         icon_url: client.user.avatarURL
                     },
-                    title: "Stats en UHC de : " + obj.player_name,
+                    title: "Stats en Survivor de : " + obj.player_name,
                     fields: [{
                         name: "Pseudo",
                         value: obj.player_name,
@@ -1915,7 +1915,6 @@ client.on('message', message => {
 
 
 })
-
 
 
 client.login(process.env.BOT_TOKEN);
