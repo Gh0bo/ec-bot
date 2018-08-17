@@ -66,6 +66,10 @@ client.on('message', message => {
                         value: obj.guild.experience
                     },
                     {
+                        name: "Joueur ban",
+                        value: obj.is_ban
+                    }
+                    {
                         name: "Dernière connexion le ",
                         value: obj.last_logout
                     }
