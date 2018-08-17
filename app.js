@@ -70,6 +70,10 @@ client.on('message', message => {
                         value: obj.is_ban
                     },
                     {
+                        name: "En ligne",
+                        value: obj.is_online
+                    },
+                    {
                         name: "Dernière connexion le ",
                         value: obj.last_logout
                     }
