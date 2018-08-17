@@ -1918,7 +1918,7 @@ client.on('message', message => {
                     },
                     {
                         name: "Winrate en mlg:",
-                        value: parseInt(obj.stats.rush_mlg.stat_win / (obj.stats.rush_mlg.stat_played_game) * 100) + "%"
+                        value: parseInt(obj.stats.rush.stat_rush_mlg_win / (obj.stats.rush.stat_rush_mlg_played) * 100) + "%"
                     },
                     {
                         name: "Nombre total de points marqués en mlg",
