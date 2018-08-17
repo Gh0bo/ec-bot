@@ -15,7 +15,6 @@ client.on('ready', ready => {
 })
 
 client.on("ready", () => {
-    client.user.setAvatar('./img/logo_header.png')
     client.user.setActivity(`prendre le contrôle de Ghorab`);
     console.log(`Je suis actuellement utilisé sur ${client.guilds.size} serveurs.`)
 });
@@ -66,14 +65,6 @@ client.on('message', message => {
                         value: obj.guild.experience
                     },
                     {
-                        name: "Joueur ban",
-                        value: obj.is_ban
-                    },
-                    {
-                        name: "En ligne",
-                        value: obj.is_online
-                    },
-                    {
                         name: "Dernière connexion le ",
                         value: obj.last_logout
                     }
@@ -110,8 +101,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.hub.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.hub.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Meilleur temps sur le jump des dieux",
@@ -157,8 +148,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.sheepwars.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.sheepwars.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -220,8 +211,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.pvpswap.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.pvpswap.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -284,8 +275,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.fk.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.fk.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties",
@@ -347,8 +338,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.payday.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.payday.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -415,8 +406,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.pitchout.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.pitchout.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -478,8 +469,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.hg.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.hg.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -535,8 +526,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.catchthecow.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.catchthecow.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombres de parties jouées",
@@ -606,8 +597,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.domination.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.domination.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombres de parties jouées",
@@ -677,8 +668,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.moutron.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.moutron.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombres de bonus utilisés",
@@ -736,8 +727,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.uhc.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.uhc.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -791,8 +782,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.survivor.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.survivor.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées",
@@ -882,8 +873,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.arrow.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.arrow.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -949,8 +940,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.totem.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.totem.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées",
@@ -1016,8 +1007,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.icerunner.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.icerunner.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -1075,8 +1066,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.discosheep.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.discosheep.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -1130,8 +1121,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.epicsmash.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.epicsmash.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total d'éjections",
@@ -1205,8 +1196,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.ageofempire.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.ageofempire.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées",
@@ -1308,8 +1299,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.gladiators.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.gladiators.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -1375,8 +1366,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.uhcrun.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.uhcrun.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées",
@@ -1434,8 +1425,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.skyfall.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.skyfall.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -1505,8 +1496,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.fightclub.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.fightclub.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de wins",
@@ -1564,8 +1555,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.buildwar.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.buildwar.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées",
@@ -1627,8 +1618,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.teamfortress.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.teamfortress.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de protections",
@@ -1690,8 +1681,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.koth.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.koth.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées",
@@ -1718,7 +1709,7 @@ client.on('message', message => {
                         value: obj.stats.koth.stat_total_damage
                     },
                     {
-                        name: "Temps total (en minute) de captures (en minutes)",
+                        name: "Temps total de captures (en minutes)",
                         value: obj.stats.koth.stat_capture_time
                     },
                     {
@@ -1765,8 +1756,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.rush.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.rush.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Nombre total de parties jouées en rush",
@@ -1836,8 +1827,8 @@ client.on('message', message => {
                         value: obj.player_name,
                     },
                     {
-                        name: "Temps total (en minute)",
-                        value: obj.stats.diecraft.stat_total_time
+                        name: "Temps total",
+                        value: parseInt(obj.stats.diecraft.stat_total_time / 60, 10) + ' heures'
                     },
                     {
                         name: "Score maximum en Easy",
@@ -1923,6 +1914,7 @@ client.on('message', message => {
 
 
 })
+
 
 
 client.login(process.env.BOT_TOKEN);
