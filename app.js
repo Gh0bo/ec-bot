@@ -2075,5 +2075,57 @@ client.on('message', message => {
 })
 
 
+client.on('message', message => {
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    const command = args.shift().toLowerCase();
+
+    if (command === "ec-guild") {
+        const player = args.join(' ')
+        message.delete();
+
+        request("https://stats.epicube.fr/player/" + player + ".json?with=stats", async function (err, res, data) {
+            let obj = JSON.parse(data);
+            console.log(obj.guild)
+            request("https://stats.epicube.fr/guild/" + obj.guild.name + ".json", async function (err, res, data) {
+                let guild = JSON.parse(data)
+                const nameOfPlayer = guild.members.find((m) => m.name === player)
+                console.log(nameOfPlayer)
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        author: {
+                            icon_url: client.user.avatarURL
+                        },
+                        title: "Stats de : " + obj.player_name + " dans la guilde " + guild.name,
+                        fields: [{
+                            name: "Guilde",
+                            value: guild.name
+                        },
+                        {
+                            name: "Grade",
+                            value: nameOfPlayer.group.name
+                        },
+                        {
+                            name: "Expérience totale apporté par le joueur",
+                            value: nameOfPlayer.xp_gained,
+                        },
+                        {
+                            name: "Il a rejoint la guilde le",
+                            value: nameOfPlayer.join_date
+                        }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            icon_url: client.user.avatarURL,
+                            text: "© EC-bot by Ghorab"
+                        }
+                    }
+                });
+
+            });
+        }
+        )
+    }
+})
 
 client.login(process.env.BOT_TOKEN);
