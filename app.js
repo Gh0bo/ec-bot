@@ -68,7 +68,7 @@ client.on('message', message => {
                     {
                         name: "Joueur ban",
                         value: obj.is_ban
-                    }
+                    },
                     {
                         name: "Dernière connexion le ",
                         value: obj.last_logout
