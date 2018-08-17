@@ -156,8 +156,12 @@ client.on('message', message => {
                         value: obj.stats.sheepwars.stat_win
                     },
                     {
-                        name: "Nombre total de wins",
+                        name: "Nombre total de défaites",
                         value: obj.stats.sheepwars.stat_lose
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.sheepwars.stat_win / (obj.stats.sheepwars.stat_win + obj.stats.sheepwars.stat_lose) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -221,6 +225,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de défaites",
                         value: obj.stats.pvpswap.stat_lose
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.pvpswap.stat_win / (obj.stats.pvpswap.stat_win + obj.stats.pvpswap.stat_lose) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -287,6 +295,14 @@ client.on('message', message => {
                         value: obj.stats.fk.stat_win
                     },
                     {
+                        name: "Nombre total de défaites :",
+                        value: parseInt(obj.stats.fk.stat_played_game - obj.stats.fk.stat_win)
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.fk.stat_win / (obj.stats.fk.stat_played_game) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.fk.stat_kill
                     },
@@ -348,6 +364,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de défaites",
                         value: obj.stats.payday.stat_lose
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.payday.stat_win / (obj.stats.payday.stat_win + obj.stats.payday.stat_lose) * 100) + "%"
                     },
                     {
                         name: "Nombre total de voleurs capturés",
@@ -418,6 +438,10 @@ client.on('message', message => {
                         value: obj.stats.pitchout.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.pitchout.stat_win / (obj.stats.pitchout.stat_win + obj.stats.pitchout.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de wins en teams",
                         value: obj.stats.pitchout.stat_win_team
                     },
@@ -481,6 +505,10 @@ client.on('message', message => {
                         value: obj.stats.hg.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.hg.stat_win / (obj.stats.hg.stat_win + obj.stats.hg.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.hg.stat_kill
                     },
@@ -536,6 +564,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de wins",
                         value: obj.stats.catchthecow.stat_win
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.catchthecow.stat_win / (obj.stats.catchthecow.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -607,6 +639,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de wins",
                         value: obj.stats.domination.stat_win
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.domination.stat_win / (obj.stats.domination.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -684,6 +720,10 @@ client.on('message', message => {
                         value: obj.stats.moutron.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.moutron.stat_win / (obj.stats.moutron.stat_win + obj.stats.moutron.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.moutron.stat_kill
                     },
@@ -739,6 +779,10 @@ client.on('message', message => {
                         value: obj.stats.uhc.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.uhc.stat_win / (obj.stats.uhc.stat_win + obj.stats.uhc.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.uhc.stat_kill
                     },
@@ -792,6 +836,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de wins",
                         value: obj.stats.survivor.stat_win
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.survivor.stat_win / (obj.stats.survivor.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de zombies tués",
@@ -885,6 +933,10 @@ client.on('message', message => {
                         value: obj.stats.arrow.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.arrow.stat_win / (obj.stats.arrow.stat_win + obj.stats.arrow.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.arrow.stat_kill
                     },
@@ -950,6 +1002,14 @@ client.on('message', message => {
                     {
                         name: "Nombre total de wins",
                         value: obj.stats.totem.stat_win
+                    },
+                    {
+                        name: "Nombre total de défaites",
+                        value: parseInt(obj.stats.totem.stat_played_game - obj.stats.totem.stat_win)
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.totem.stat_win / (obj.stats.totem.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -1019,6 +1079,10 @@ client.on('message', message => {
                         value: obj.stats.icerunner.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.icerunner.stat_win / (obj.stats.icerunner.stat_lose) * 100) + "%"
+                    },                    
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.icerunner.stat_kill
                     },
@@ -1076,6 +1140,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de défaites",
                         value: obj.stats.discosheep.stat_lose
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.discosheep.stat_win / (obj.stats.discosheep.stat_win + obj.stats.discosheep.stat_lose) * 100) + "%"
                     },
                     {
                         name: "Vague maximum",
@@ -1208,6 +1276,14 @@ client.on('message', message => {
                         value: obj.stats.ageofempire.stat_win
                     },
                     {
+                        name: "Nombre de défaites :",
+                        value: parseInt(obj.stats.ageofempire.stat_played_game - obj.stats.ageofempire.stat_win)
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.ageofempire.stat_win / (obj.stats.ageofempire.stat_played_game) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de morts",
                         value: obj.stats.ageofempire.stat_death
                     },
@@ -1311,6 +1387,10 @@ client.on('message', message => {
                         value: obj.stats.gladiators.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.gladiators.stat_win / (obj.stats.gladiators.stat_win + obj.stats.gladiators.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de combats wins",
                         value: obj.stats.gladiators.stat_fight_win
                     },
@@ -1382,6 +1462,10 @@ client.on('message', message => {
                         value: obj.stats.uhcrun.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.gladiators.stat_win / (obj.stats.gladiators.stat_played_game) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.uhcrun.stat_kill
                     },
@@ -1435,6 +1519,10 @@ client.on('message', message => {
                     {
                         name: "Nombre total de défaites",
                         value: obj.stats.skyfall.stat_lose_solo
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.skyfall.stat_win / (obj.stats.skyfall.stat_win + obj.stats.skyfall.stat_lose) * 100) + "%"
                     },
                     {
                         name: "Nombre total de wins en équipes",
@@ -1508,6 +1596,10 @@ client.on('message', message => {
                         value: obj.stats.fightclub.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.fightclub.stat_win / (obj.stats.fightclub.stat_win + obj.stats.fightclub.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Nombre total de kills",
                         value: obj.stats.fightclub.stat_kill
                     },
@@ -1562,6 +1654,7 @@ client.on('message', message => {
                         name: "Nombre total de parties jouées",
                         value: obj.stats.buildwar.stat_played_game
                     },
+                    
                     {
                         name: "Nombre total de blocs placés",
                         value: obj.stats.buildwar.stat_block_placed
@@ -1571,12 +1664,28 @@ client.on('message', message => {
                         value: obj.stats.buildwar.stat_win_solo
                     },
                     {
-                        name: "Nombre total de wins en solo en 2v2",
+                        name: "Nombre de défaites en solo :",
+                        value: parseInt(obj.stats.gladiators.stat_played_game - obj.stats.gladiators.stat_win_solo)
+                    },
+                    {
+                        name: "Nombre total de wins en 2v2",
                         value: obj.stats.buildwar.stat_win_2v2
                     },
                     {
-                        name: "Nombre total de wins en solo en 3v3",
+                        name: "Nombre de défaites en 2v2 :",
+                        value: parseInt(obj.stats.buildwar.stat_played_game - obj.stats.buildwar.stat_win_2v2)
+                    },
+                    {
+                        name: "Nombre total de wins en 3v3",
                         value: obj.stats.buildwar.stat_win_3v3
+                    },
+                    {
+                        name: "Nombre de défaites en 3v3 :",
+                        value: parseInt(obj.stats.buildwar.stat_played_game - obj.stats.buildwar.stat_win_3v3)
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.buildwar.stat_win / (obj.stats.buildwar.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Gain total d'EC",
@@ -1642,6 +1751,10 @@ client.on('message', message => {
                         value: obj.stats.teamfortress.stat_lose
                     },
                     {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.teamfortress.stat_win / (obj.stats.teamfortress.stat_win + obj.stats.teamfortress.stat_lose) * 100) + "%"
+                    },
+                    {
                         name: "Gain total d'EC",
                         value: obj.stats.teamfortress.stat_gain_ec
                     },
@@ -1691,6 +1804,14 @@ client.on('message', message => {
                     {
                         name: "Nombre total de wins",
                         value: obj.stats.koth.stat_win
+                    },
+                    {
+                        name: "Nombre total de défaites :",
+                        value: parseInt(obj.stats.teamfortress.stat_played_game - (obj.stats.teamfortress.stat_win) * 100)
+                    },
+                    {
+                        name: "Winrate :",
+                        value: parseInt(obj.stats.teamfortress.stat_win / (obj.stats.teamfortress.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -1764,12 +1885,20 @@ client.on('message', message => {
                         value: obj.stats.rush.stat_played_game
                     },
                     {
-                        name: "Nombre total de lits cassés en rush",
-                        value: obj.stats.rush.stat_rush_bed_break
-                    },
-                    {
                         name: "Nombre total de wins en rush",
                         value: obj.stats.rush.stat_win
+                    },
+                    {
+                        name: "Nombre total de défaites en rush :",
+                        value: parseInt(obj.stats.rush.stat_played_game - obj.stats.rush.stat_win)
+                    },
+                    {
+                        name: "Winrate en rush:",
+                        value: parseInt(obj.stats.rush.stat_win / (obj.stats.rush.stat_played_game) * 100) + "%"
+                    },
+                    {
+                        name: "Nombre total de lits cassés en rush",
+                        value: obj.stats.rush.stat_rush_bed_break
                     },
                     {
                         name: "Nombre total de kills en rush",
@@ -1782,6 +1911,14 @@ client.on('message', message => {
                     {
                         name: "Nombre total de wins en mlg",
                         value: obj.stats.rush.stat_rush_mlg_win
+                    },
+                    {
+                        name: "Nombre total de défaites en mlg :",
+                        value: parseInt(obj.stats.rush.stat_rush_mlg_played - obj.stats.rush.stat_rush_mlg_win)
+                    },
+                    {
+                        name: "Winrate en mlg:",
+                        value: parseInt(obj.stats.rush_mlg.stat_win / (obj.stats.rush_mlg.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de points marqués en mlg",
@@ -1843,14 +1980,21 @@ client.on('message', message => {
                         value: obj.stats.diecraft.stat_diecraft_run_time_max_easy
                     },
                     {
-                        name: "Parties commencées en Easy",
+                        name: "Nombre de parties en Easy",
                         value: obj.stats.diecraft.stat_diecraft_run_started_easy
                     },
                     {
                         name: "Wins en Easy",
                         value: obj.stats.diecraft.stat_diecraft_world_wins_easy
                     },
-
+                    {
+                        name: "Nombre de défaites en easy",
+                        value: parseInt(obj.stats.diecraft.stat_diecraft_run_started_easy - obj.stats.diecraft.stat_diecraft_world_wins_easy)
+                    },
+                    {
+                        name: "Winrate en easy",
+                        value: parseInt(obj.stats.diecraft.stat_diecraft_world_wins_easy / (obj.stats.diecraft.stat_diecraft_run_started_easy)) * 100 + "%"
+                    },
                     {
                         name: "Score maximum en Normal",
                         value: obj.stats.diecraft.stat_score_max_normal
@@ -1864,14 +2008,21 @@ client.on('message', message => {
                         value: obj.stats.diecraft.stat_diecraft_run_time_max_normal
                     },
                     {
-                        name: "Parties commencées en Normal",
+                        name: "Nombre de parties en Normal",
                         value: obj.stats.diecraft.stat_diecraft_run_started_normal
                     },
                     {
                         name: "Wins en Normal",
                         value: obj.stats.diecraft.stat_diecraft_world_wins_normal
                     },
-
+                    {
+                        name: "Défaites en normal",
+                        value: parseInt(obj.stats.diecraft.stat_diecraft_run_started_normal - obj.stats.diecraft.stat_diecraft_world_wins_normal)
+                    },
+                    {
+                        name: "Winrate en normal",
+                        value: parseInt(obj.stats.diecraft.stat_diecraft_world_wins_normal / (obj.stats.diecraft.stat_diecraft_run_started_normal) * 100) + "%"
+                    },
                     {
                         name: "Score maximum en Hard",
                         value: obj.stats.diecraft.stat_score_max_hard
@@ -1885,12 +2036,20 @@ client.on('message', message => {
                         value: obj.stats.diecraft.stat_diecraft_run_time_max_hard
                     },
                     {
-                        name: "Parties commencées en Hard",
+                        name: "Nombre de parties en Hard",
                         value: obj.stats.diecraft.stat_diecraft_run_started_hard
                     },
                     {
                         name: "Wins en Hard",
                         value: obj.stats.diecraft.stat_diecraft_world_wins_hard
+                    },
+                    {
+                        name: "Défaites en Hard",
+                        value: parseInt(obj.stats.diecraft.stat_diecraft_run_started_hard - obj.stats.diecraft.stat_diecraft_world_wins_hard)
+                    },
+                    {
+                        name: "Winrate en Hard",
+                        value: parseInt(obj.stats.diecraft.stat_diecraft_world_wins_normal / (obj.stats.diecraft.stat_diecraft_run_started_hard) * 100) + "%"
                     },
                     {
                         name: "Gain total d'EC",
