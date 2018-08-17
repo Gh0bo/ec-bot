@@ -21,7 +21,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.content === "?help") {
-        message.reply("\n\n```!ec-stats\n!ec-hub\n!ec-sheepwars\n!ec-pvpswap\n!ec-fk\n!ec-payday\n!ec-pitchout\n!ec-hg\n!ec-ctc\n!ec-domination\n!ec-moutron\n!ec-uhc\n!ec-survivor\n!ec-arrow\n!ec-totem\n!ec-icerunner\n!ec-discosheep\n!ec-epicsmash\n!ec-aoe\n!ec-gladiators\n!ec-uhcrun\n!ec-skyfall\n!ec-fightclub\n!ec-buildwars\n!ec-teamfortress\n!ec-koth\n!ec-rush-mlg\n!ec-diecraft```")
+        message.reply("\n\n```!ec-guild\n!ec-stats\n!ec-hub\n!ec-sheepwars\n!ec-pvpswap\n!ec-fk\n!ec-payday\n!ec-pitchout\n!ec-hg\n!ec-ctc\n!ec-domination\n!ec-moutron\n!ec-uhc\n!ec-survivor\n!ec-arrow\n!ec-totem\n!ec-icerunner\n!ec-discosheep\n!ec-epicsmash\n!ec-aoe\n!ec-gladiators\n!ec-uhcrun\n!ec-skyfall\n!ec-fightclub\n!ec-buildwars\n!ec-teamfortress\n!ec-koth\n!ec-rush-mlg\n!ec-diecraft```")
 
     }
 })
