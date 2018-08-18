@@ -15,13 +15,13 @@ client.on('ready', ready => {
 })
 
 client.on("ready", () => {
-    client.user.setActivity(`être au services des gens sur ${client.guilds.size} serveurs`);
+    client.user.setActivity(`prendre le contrôle de Ghorab\n Je suis sur ${client.guilds.size} serveurs`);
     console.log(`Je suis actuellement utilisé sur ${client.guilds.size} serveurs.`)
 });
 
 client.on('message', message => {
     if (message.content === "?help") {
-        message.reply("\n\n```!ec-guild\n!ec-stats\n!ec-hub\n!ec-sheepwars\n!ec-pvpswap\n!ec-fk\n!ec-payday\n!ec-pitchout\n!ec-hg\n!ec-ctc\n!ec-domination\n!ec-moutron\n!ec-uhc\n!ec-survivor\n!ec-arrow\n!ec-totem\n!ec-icerunner\n!ec-discosheep\n!ec-epicsmash\n!ec-aoe\n!ec-gladiators\n!ec-uhcrun\n!ec-skyfall\n!ec-fightclub\n!ec-buildwars\n!ec-teamfortress\n!ec-koth\n!ec-rush-mlg\n!ec-diecraft```")
+        message.reply("\n\n```!ec-stats\n!ec-hub\n!ec-sheepwars\n!ec-pvpswap\n!ec-fk\n!ec-payday\n!ec-pitchout\n!ec-hg\n!ec-ctc\n!ec-domination\n!ec-moutron\n!ec-uhc\n!ec-survivor\n!ec-arrow\n!ec-totem\n!ec-icerunner\n!ec-discosheep\n!ec-epicsmash\n!ec-aoe\n!ec-gladiators\n!ec-uhcrun\n!ec-skyfall\n!ec-fightclub\n!ec-buildwars\n!ec-teamfortress\n!ec-koth\n!ec-rush-mlg\n!ec-diecraft```")
 
     }
 })
@@ -45,10 +45,12 @@ client.on('message', message => {
                     author: {
                         icon_url: client.user.avatarURL
                     },
-                    title: "Stats of " + obj.player_name,
+                    title: "Stats de " + obj.player_name,
                     fields: [{
-                        name: "Pseudo",
-                        value: obj.player_name,
+                        name: "Date de la première connexion du joueur sur le serveur",
+                        value: obj.player_registration
+                    },
+                    {
                         name: "Grade",
                         value: obj.tag
                     },
@@ -61,8 +63,8 @@ client.on('message', message => {
                         value: obj.guild.level
                     },
                     {
-                        name: "Expérience de la guilde",
-                        value: obj.guild.experience
+                        name: "Joueur bannis ?",
+                        value: obj.is_ban
                     },
                     {
                         name: "Dernière connexion le ",
@@ -217,6 +219,10 @@ client.on('message', message => {
                     {
                         name: "Temps total",
                         value: parseInt(obj.stats.pvpswap.stat_total_time / 60, 10) + ' heures'
+                    },
+                    {
+                        name: "Nombre total de parties",
+                        value: parseInt(obj.stats.pvpswap.stat_win + obj.stats.pvpswap.stat_lose)
                     },
                     {
                         name: "Nombre total de wins",
@@ -1081,7 +1087,7 @@ client.on('message', message => {
                     {
                         name: "Winrate :",
                         value: parseInt(obj.stats.icerunner.stat_win / (obj.stats.icerunner.stat_lose) * 100) + "%"
-                    },                    
+                    },
                     {
                         name: "Nombre total de kills",
                         value: obj.stats.icerunner.stat_kill
@@ -1654,7 +1660,7 @@ client.on('message', message => {
                         name: "Nombre total de parties jouées",
                         value: obj.stats.buildwar.stat_played_game
                     },
-                    
+
                     {
                         name: "Nombre total de blocs placés",
                         value: obj.stats.buildwar.stat_block_placed
@@ -1807,11 +1813,11 @@ client.on('message', message => {
                     },
                     {
                         name: "Nombre total de défaites :",
-                        value: parseInt(obj.stats.teamfortress.stat_played_game - (obj.stats.teamfortress.stat_win) * 100)
+                        value: parseInt(obj.stats.koth.stat_played_game - (obj.stats.koth.stat_win) * 100)
                     },
                     {
                         name: "Winrate :",
-                        value: parseInt(obj.stats.teamfortress.stat_win / (obj.stats.teamfortress.stat_played_game) * 100) + "%"
+                        value: parseInt(obj.stats.koth.stat_win / (obj.stats.koth.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de kills",
@@ -1918,7 +1924,7 @@ client.on('message', message => {
                     },
                     {
                         name: "Winrate en mlg:",
-                        value: parseInt(obj.stats.rush.stat_rush_mlg_win / (obj.stats.rush.stat_rush_mlg_played) * 100) + "%"
+                        value: parseInt(obj.stats.rush_mlg.stat_win / (obj.stats.rush_mlg.stat_played_game) * 100) + "%"
                     },
                     {
                         name: "Nombre total de points marqués en mlg",
@@ -2075,6 +2081,9 @@ client.on('message', message => {
 })
 
 
+
+
+
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
@@ -2144,5 +2153,6 @@ client.on('message', message => {
         )
     }
 })
+
 
 client.login(process.env.BOT_TOKEN);
