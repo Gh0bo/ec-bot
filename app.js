@@ -2108,7 +2108,11 @@ client.on('message', message => {
                         },
                         {
                             name: "Niveau de la guilde",
-                            value: guild.level
+                            value: obj.guild.level
+                        },
+                        {
+                            name: "Progression jusqu'au prochain niveau ",
+                            value: parseInt(guild.experience) + " / " + parseInt(guild.needed_experience)
                         },
                         {
                             name: "Nombre de membres",
