@@ -2102,6 +2102,10 @@ client.on('message', message => {
                             value: guild.name
                         },
                         {
+                            name: "Niveau de la guilde",
+                            value: guild.level
+                        },
+                        {
                             name: "Grade",
                             value: nameOfPlayer.group.name
                         },
