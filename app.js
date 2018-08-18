@@ -1030,11 +1030,11 @@ client.on('message', message => {
                         value: obj.stats.totem.stat_death
                     },
                     {
-                        name: "Nombres de totem détruits",
+                        name: "Nombre de blocs de totems détruits",
                         value: obj.stats.totem.stat_totem_destroyed
                     },
                     {
-                        name: "Nombres de points de défenses",
+                        name: "Nombre de points de défenses",
                         value: obj.stats.totem.stat_defence_points
                     },
                     {
