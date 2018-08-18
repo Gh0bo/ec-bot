@@ -2136,7 +2136,7 @@ client.on('message', message => {
                             value: totalMember
                         },
                         {
-                            name: "Rank",
+                            name: "Classement de la guilde",
                             value: guild.rank
                         },
                         {
