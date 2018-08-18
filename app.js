@@ -63,8 +63,12 @@ client.on('message', message => {
                         value: obj.guild.level
                     },
                     {
-                        name: "Joueur bannis ?",
+                        name: "Joueur banni ? (True/false)",
                         value: obj.is_ban
+                    },
+                    {
+                        name: "Joueur connecté ? (True/false)",
+                        value: obj.is_online
                     },
                     {
                         name: "Dernière connexion le ",
