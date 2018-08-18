@@ -1813,7 +1813,7 @@ client.on('message', message => {
                     },
                     {
                         name: "Nombre total de défaites :",
-                        value: parseInt(obj.stats.koth.stat_played_game - (obj.stats.koth.stat_win) * 100)
+                        value: parseInt(obj.stats.koth.stat_played_game - obj.stats.koth.stat_win)
                     },
                     {
                         name: "Winrate :",
