@@ -2103,8 +2103,8 @@ client.on('message', message => {
                 let guild = JSON.parse(data)
                 const nameOfPlayer = guild.members.find((m) => m.name === player)
 
-                var myStringArray = guild.members;
-                var arrayLength = myStringArray.length;
+                var totalMemberArray = guild.members;
+                var arrayLength = totalMemberArray.length;
                 for (var totalMember = 0; totalMember < arrayLength; totalMember++) {
                 }
                 // console.log(nameOfPlayer)
@@ -2114,8 +2114,7 @@ client.on('message', message => {
                         author: {
                             icon_url: client.user.avatarURL
                         },
-                        title: "Stats du joueur : __" + obj.player_name + "__ dans la guilde " + guild.name,
-                        fields: [{
+                        title: "Stats du joueur : " + obj.player_name + " dans la guilde " + guild.name,
                             name: "Guilde",
                             value: guild.name
                         },
