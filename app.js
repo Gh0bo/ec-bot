@@ -1867,7 +1867,7 @@ client.on('message', message => {
         });
     }
 
-        if (command === "ec-rush-mlg") {
+    if (command === "ec-rush-mlg") {
         const player = args.join(' ');
         message.delete();
 
@@ -2136,7 +2136,7 @@ client.on('message', message => {
                             value: totalMember
                         },
                         {
-                            name: "Classement de la guilde",
+                            name: "Rank",
                             value: guild.rank
                         },
                         {
@@ -2165,8 +2165,6 @@ client.on('message', message => {
         )
     }
 })
-
-
 
 
 
