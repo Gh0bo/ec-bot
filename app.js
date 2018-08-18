@@ -2120,6 +2120,10 @@ client.on('message', message => {
                             value: guild.name
                         },
                         {
+                            name: "Date de création de la guilde",
+                            value: guild.creation_date
+                        },
+                        {
                             name: "Niveau de la guilde",
                             value: obj.guild.level
                         },
@@ -2130,6 +2134,10 @@ client.on('message', message => {
                         {
                             name: "Nombre de membres",
                             value: totalMember
+                        },
+                        {
+                            name: "Rank",
+                            value: guild.rank
                         },
                         {
                             name: "Grade",
