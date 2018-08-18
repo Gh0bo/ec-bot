@@ -2089,14 +2089,19 @@ client.on('message', message => {
             request("https://stats.epicube.fr/guild/" + obj.guild.name + ".json", async function (err, res, data) {
                 let guild = JSON.parse(data)
                 const nameOfPlayer = guild.members.find((m) => m.name === player)
-                console.log(nameOfPlayer)
+
+                var myStringArray = guild.members;
+                var arrayLength = myStringArray.length;
+                for (var totalMember = 0; totalMember < arrayLength; totalMember++) {
+                }
+                // console.log(nameOfPlayer)
                 message.channel.send({
                     embed: {
                         color: 3447003,
                         author: {
                             icon_url: client.user.avatarURL
                         },
-                        title: "Stats de : " + obj.player_name + " dans la guilde " + guild.name,
+                        title: "Stats du joueur : __" + obj.player_name + "__ dans la guilde " + guild.name,
                         fields: [{
                             name: "Guilde",
                             value: guild.name
@@ -2104,6 +2109,10 @@ client.on('message', message => {
                         {
                             name: "Niveau de la guilde",
                             value: guild.level
+                        },
+                        {
+                            name: "Nombre de membres",
+                            value: totalMember
                         },
                         {
                             name: "Grade",
