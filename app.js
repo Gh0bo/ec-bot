@@ -2103,8 +2103,8 @@ client.on('message', message => {
                 let guild = JSON.parse(data)
                 const nameOfPlayer = guild.members.find((m) => m.name === player)
 
-                var totalMemberArray = guild.members;
-                var arrayLength = totalMemberArray.length;
+                var myStringArray = guild.members;
+                var arrayLength = myStringArray.length;
                 for (var totalMember = 0; totalMember < arrayLength; totalMember++) {
                 }
                 // console.log(nameOfPlayer)
