@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "!";
 const request = require('request');
-const fs = require('fs')
+const fs = require('fs');
 const {
     promisify
 } = require('util')
-const writeFile = promisify(fs.writeFile)
-const readFile = promisify(fs.readFile)
+const writeFile = promisify(fs.writeFile);
+const readFile = promisify(fs.readFile);
 
 
 client.on('ready', ready => {
