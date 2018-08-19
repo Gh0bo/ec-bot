@@ -17,6 +17,7 @@ client.on('ready', ready => {
 client.on("ready", () => {
     client.user.setActivity(`Je suis sur ${client.guilds.size} serveurs`);
     console.log(`Je suis actuellement utilisé sur ${client.guilds.size} serveurs. :)`)
+    client.user.setUsername("EC-BOT[test]")
 });
 
 client.on('message', message => {
