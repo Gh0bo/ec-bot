@@ -15,9 +15,10 @@ client.on('ready', ready => {
 })
 
 client.on("ready", () => {
-    client.user.setActivity(`Je suis sur ${client.guilds.size} serveurs`);
-    console.log(`Je suis actuellement utilisé sur ${client.guilds.size} serveurs. :)`)
+    client.user.setActivity(`prendre le contrôle de Ghorab\n Je suis sur ${client.guilds.size} serveurs`);
+    console.log(`Je suis actuellement utilisé sur ${client.guilds.size} serveurs.`)
 });
+
 
 client.on('message', message => {
     if (message.content === "?help") {
