@@ -22,7 +22,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.content === "?help") {
-        message.reply("\n\n```!ec-stats\n!ec-guild\n!ec-hub\n!ec-sheepwars\n!ec-pvpswap\n!ec-fk\n!ec-payday\n!ec-pitchout\n!ec-hg\n!ec-ctc\n!ec-domination\n!ec-moutron\n!ec-uhc\n!ec-survivor\n!ec-arrow\n!ec-totem\n!ec-icerunner\n!ec-discosheep\n!ec-epicsmash\n!ec-aoe\n!ec-gladiators\n!ec-uhcrun\n!ec-skyfall\n!ec-fightclub\n!ec-buildwars\n!ec-teamfortress\n!ec-koth\n!ec-rush-mlg\n!ec-diecraft```")
+        message.reply("\n\n```!ec-stats <pseudo>\n!ec-guild <pseudo>\n!ec-hub <pseudo>\n!ec-sheepwars <pseudo>\n!ec-pvpswap <pseudo>\n!ec-fk <pseudo>\n!ec-payday <pseudo>\n!ec-pitchout <pseudo>\n!ec-hg <pseudo>\n!ec-ctc <pseudo\n!ec-domination <pseudo\n!ec-moutron <pseudo\n!ec-uhc <pseudo\n!ec-survivor <pseudo\n!ec-arrow <pseudo\n!ec-totem <pseudo\n!ec-icerunner <pseudo\n!ec-discosheep <pseudo\n!ec-epicsmash <pseudo>\n!ec-aoe <pseudo>\n!ec-gladiators <pseudo>\n!ec-uhcrun <pseudo>\n!ec-skyfall <pseudo>\n!ec-fightclub <pseudo>\n!ec-buildwars <pseudo>\n!ec-teamfortress <pseudo>\n!ec-koth <pseudo>\n!ec-rush-mlg <pseudo>\n!ec-diecraft <pseudo>```")
 
     }
 })
