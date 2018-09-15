@@ -49,51 +49,52 @@ client.on('message', message => {
 
             let connectedServer = obj.on_server
 
-        if (connectedServer == undefined) {
-            message.channel.send({
-                embed: {
-                    color: 3447003,
-                    author: {
-                        icon_url: client.user.avatarURL
-                    },
-                    title: "Stats de " + obj.player_name,
-                    fields: [{
-                        name: "Date de la première connexion du joueur sur le serveur",
-                        value: obj.player_registration
-                    },
-                    {
-                        name: "Grade",
-                        value: obj.tag
-                    },
-                    {
-                        name: "Guilde",
-                        value: obj.guild.name
-                    },
-                    {
-                        name: "Niveau de la guilde",
-                        value: obj.guild.level
-                    },
-                    {
-                        name: "Joueur banni ? (True/false)",
-                        value: obj.is_ban
-                    },
-                    {
-                        name: "Joueur connecté ? (True/false)",
-                        value: obj.is_online
-                    },
-                    {
-                        name: "Dernière connexion le ",
-                        value: obj.last_logout
+
+            if (connectedServer == undefined) {
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        author: {
+                            icon_url: client.user.avatarURL
+                        },
+                        title: "Stats de " + obj.player_name,
+                        fields: [{
+                            name: "Date de la première connexion du joueur sur le serveur",
+                            value: obj.player_registration
+                        },
+                        {
+                            name: "Grade",
+                            value: obj.tag
+                        },
+                        {
+                            name: "Guilde",
+                            value: obj.guild.name
+                        },
+                        {
+                            name: "Niveau de la guilde",
+                            value: obj.guild.level
+                        },
+                        {
+                            name: "Joueur banni ? (True/false)",
+                            value: obj.is_ban
+                        },
+                        {
+                            name: "Joueur connecté ? (True/false)",
+                            value: obj.is_online
+                        },
+                        {
+                            name: "Dernière connexion le ",
+                            value: obj.last_logout
+                        }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            icon_url: client.user.avatarURL,
+                            text: "© EC-BOT By Ghorab"
+                        }
                     }
-                    ],
-                    timestamp: new Date(),
-                    footer: {
-                        icon_url: client.user.avatarURL,
-                        text: "© EC-BOT By Ghorab"
-                    }
-                }
-            });
-        }
+                });
+            }
 
             message.channel.send({
                 embed: {
@@ -146,6 +147,63 @@ client.on('message', message => {
 
     }
 
+
+    if (command === "ec-stats") {
+        const player = args.join(' ');
+        message.delete();
+
+        request("https://stats.epicube.fr/player/" + player + ".json", async function (err, res, data) {
+
+
+            let obj = JSON.parse(data)
+
+            let hasGuild = obj.guild
+
+            if (hasGuild == null) {
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        author: {
+                            icon_url: client.user.avatarURL
+                        },
+                        title: "Stats de " + obj.player_name,
+                        fields: [{
+                            name: "Date de la première cosdsdqqdnnexion du joueur sur le serveur",
+                            value: obj.player_registration
+                        },
+                        {
+                            name: "Grade",
+                            value: obj.tag
+                        },
+                        {
+                            name: "Guilde",
+                            value: "Ce joueur n'a pas de guilde"
+                        },
+                        {
+                            name: "Joueur banni ? (True/false)",
+                            value: obj.is_ban
+                        },
+                        {
+                            name: "Joueur connecté ? (True/false)",
+                            value: obj.is_online
+                        },
+                        {
+                            name: "Dernière connexion le ",
+                            value: obj.last_logout
+                        }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            icon_url: client.user.avatarURL,
+                            text: "© EC-BOT By Ghorab"
+                        }
+                    }
+                });
+            }
+
+        });
+
+    }
 
     if (command === "ec-hub") {
         const player = args.join(' ');
@@ -2147,7 +2205,6 @@ client.on('message', message => {
 
 
 
-
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
@@ -2221,10 +2278,58 @@ client.on('message', message => {
                 });
 
             });
+
         }
         )
     }
 })
+
+client.on('message', message => {
+
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    const command = args.shift().toLowerCase();
+
+
+    if (command === "ec-guild") {
+        const player = args.join(' ');
+        message.delete();
+    
+        request("https://stats.epicube.fr/player/" + player + ".json", async function (err, res, data) {
+    
+    
+            let obj = JSON.parse(data)
+    
+            let hasGuild = obj.guild
+    
+            if (hasGuild == null) {
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        author: {
+                            icon_url: client.user.avatarURL
+                        },
+                        title: "Stats de " + obj.player_name,
+                        fields: [
+                        {
+                            name: "Guilde",
+                            value: "Ce joueur n'a pas de guilde"
+                        }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            icon_url: client.user.avatarURL,
+                            text: "© EC-BOT By Ghorab"
+                        }
+                    }
+                });
+            }
+    
+        });
+    
+    }
+})
+
+
 
 
 client.login(process.env.BOT_TOKEN);
