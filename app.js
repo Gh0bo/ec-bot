@@ -22,8 +22,14 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.content === "!ec-help") {
-        message.reply("\n\n```!ec-stats <pseudo>\n!ec-guild <pseudo>\n!ec-hub <pseudo>\n!ec-sheepwars <pseudo>\n!ec-pvpswap <pseudo>\n!ec-fk <pseudo>\n!ec-payday <pseudo>\n!ec-pitchout <pseudo>\n!ec-hg <pseudo>\n!ec-ctc <pseudo>\n!ec-domination <pseudo>\n!ec-moutron <pseudo>\n!ec-uhc <pseudo>\n!ec-survivor <pseudo>\n!ec-arrow <pseudo>\n!ec-totem <pseudo>\n!ec-icerunner <pseudo>\n!ec-discosheep <pseudo>\n!ec-epicsmash <pseudo>\n!ec-aoe <pseudo>\n!ec-gladiators <pseudo>\n!ec-uhcrun <pseudo>\n!ec-skyfall <pseudo>\n!ec-fightclub <pseudo>\n!ec-buildwars <pseudo>\n!ec-teamfortress <pseudo>\n!ec-koth <pseudo>\n!ec-rush-mlg <pseudo>\n!ec-diecraft <pseudo>```")
+        message.reply("\n\n```!ec-link\n!ec-stats <pseudo>\n!ec-guild <pseudo>\n!ec-hub <pseudo>\n!ec-sheepwars <pseudo>\n!ec-pvpswap <pseudo>\n!ec-fk <pseudo>\n!ec-payday <pseudo>\n!ec-pitchout <pseudo>\n!ec-hg <pseudo>\n!ec-ctc <pseudo>\n!ec-domination <pseudo>\n!ec-moutron <pseudo>\n!ec-uhc <pseudo>\n!ec-survivor <pseudo>\n!ec-arrow <pseudo>\n!ec-totem <pseudo>\n!ec-icerunner <pseudo>\n!ec-discosheep <pseudo>\n!ec-epicsmash <pseudo>\n!ec-aoe <pseudo>\n!ec-gladiators <pseudo>\n!ec-uhcrun <pseudo>\n!ec-skyfall <pseudo>\n!ec-fightclub <pseudo>\n!ec-buildwars <pseudo>\n!ec-teamfortress <pseudo>\n!ec-koth <pseudo>\n!ec-rush-mlg <pseudo>\n!ec-diecraft <pseudo>```")
 
+    }
+})
+
+client.on('message', message => {
+    if (message.content === "!ec-link") {
+        message.reply('play.epicube.fr')
     }
 })
 
