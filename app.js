@@ -2329,7 +2329,7 @@ client.on('message', message => {
     }
 })
 
-
+// preuve le rank
 
 
 client.login(process.env.BOT_TOKEN);
